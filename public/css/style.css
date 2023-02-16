@@ -1,0 +1,54 @@
+body {
+  background-image: url("../ch6/challenge6/public/assets/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container,
+.register-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #bbb;
+  padding: 40px;
+  text-align: center;
+  width: 300px;
+}
+
+h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+
+button[type="submit"] {
+  background-color: #efa943;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ed981c;
+}
