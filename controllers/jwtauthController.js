@@ -16,12 +16,22 @@ module.exports = {
       .then(() => {
         res.redirect("/login");
       })
-      .catch((err) => next(err));
+      .catch((err) => {
+        res.status(401).json({ error: err });
+      });
   },
   login: (req, res) => {
     console.log(req.body);
-    Admin.authenticate(req.body).then((admin) => {
-      res.json(format(admin));
-    });
+    Admin.authenticate(req.body)
+      .then((admin) => {
+        res.json(format(admin));
+      })
+      .catch((err) => {
+        res.status(401).json({ error: err.message });
+      });
+  },
+  whoami: (req, res) => {
+    const currentAdmin = req.admin;
+    res.json(currentAdmin);
   },
 };
